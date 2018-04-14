@@ -1,14 +1,17 @@
-## Welcome to GitHub Pages
+## US States Map Popup
 
-You can use the [editor on GitHub](https://github.com/yaowang908/us-states-map-pop-outs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Can be scaled as needed with svg US States Map.
+Each state has a clickable popup with bootstrap style.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How to use
 
-### Markdown
+Integrate the html code into project
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Acknowledgement
 
-```markdown
+This project use US map from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg).
+
+<!-- ```markdown
 Syntax highlighted code block
 
 # Header 1
@@ -34,4 +37,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out. -->
