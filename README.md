@@ -2,6 +2,7 @@
 
 Can be scaled as needed with svg US States Map.
 Each state has a clickable popup with bootstrap style.
+[Demo](https://yaowang908.github.io/us-states-map-popup/usmap.html).
 
 ### How to use
 
