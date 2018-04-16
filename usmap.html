@@ -758,6 +758,9 @@
                             dcPaths.addEventListener('mouseover', function (event) { onMouseOver(event); });
                             dcPaths.addEventListener('mouseout', function (event) { onMouseOut(event); });
                             dcPaths.addEventListener('click', function (event) { onMouseClick(event); });
+
+                            
+
                         })();
 
                         //mouse over call back
@@ -843,11 +846,18 @@
                 "WI":"WISCONSIN",
                 "WY":"WYOMING"
               };
+              /**
+              *   "AL": {
+              *       0 : '2',
+              *       1 : { rank : '86',enName : 'University of Alabama',zhName : '阿拉巴马大学'},
+              *       2 : { rank: '91', enName: 'Auburn University', zhName: '奥本大学'}
+              *   },
+              */
               let stateUniversities = {
                 "AL":{
-                  0 : '2',
-                  1 : { rank : '86',enName : 'University of Alabama',zhName : '阿拉巴马大学'},
-                  2 : { rank: '91', enName: 'Auburn University', zhName: '奥本大学'}
+                  // 0 : '2',
+                  // 1 : { rank : '86',enName : 'University of Alabama',zhName : '阿拉巴马大学'},
+                  // 2 : { rank: '91', enName: 'Auburn University', zhName: '奥本大学'}
                 },
                 "AK":{
                    
@@ -859,46 +869,46 @@
 
                 },
                 "CA":{
-                  0: '12',
-                  1: { rank: '5', enName: 'Stanford University', zhName: '斯坦福大学' },
-                  2: { rank: '10', enName: 'California Institute of Technology', zhName: '加州理工学院' },
-                  3: { rank: '20', enName: 'University of California - Berkeley', zhName: '加州大学伯克利分校' },
-                  4: { rank: '23', enName: 'University of Southern California', zhName: '南加州大学' },
-                  5: { rank: '23', enName: 'University of California - Los Angeles', zhName: '加州大学洛杉矶分校' },
-                  6: { rank: '39', enName: 'University of California - San Diego', zhName: '加州大学圣地亚哥分校' },
-                  7: { rank: '39', enName: 'University of California - Davis', zhName: '加州大学戴维斯分校' },
-                  8: { rank: '41', enName: 'University of California - Santa Barbara', zhName: '加州大学圣塔芭芭拉分校' },
-                  9: { rank: '49', enName: 'University of California - Irvine', zhName: '加州大学欧文分校' },
-                  10: { rank: '57', enName: 'Pepperdine University', zhName: '佩珀代因大学' },
-                  11: { rank: '86', enName: 'University of California - Santa Cruz', zhName: '加州大学圣克鲁兹分校' },
-                  12: { rank: '91', enName: 'University of San Diego', zhName: '圣地亚哥大学' }
+                  // 0: '12',
+                  // 1: { rank: '5', enName: 'Stanford University', zhName: '斯坦福大学' },
+                  // 2: { rank: '10', enName: 'California Institute of Technology', zhName: '加州理工学院' },
+                  // 3: { rank: '20', enName: 'University of California - Berkeley', zhName: '加州大学伯克利分校' },
+                  // 4: { rank: '23', enName: 'University of Southern California', zhName: '南加州大学' },
+                  // 5: { rank: '23', enName: 'University of California - Los Angeles', zhName: '加州大学洛杉矶分校' },
+                  // 6: { rank: '39', enName: 'University of California - San Diego', zhName: '加州大学圣地亚哥分校' },
+                  // 7: { rank: '39', enName: 'University of California - Davis', zhName: '加州大学戴维斯分校' },
+                  // 8: { rank: '41', enName: 'University of California - Santa Barbara', zhName: '加州大学圣塔芭芭拉分校' },
+                  // 9: { rank: '49', enName: 'University of California - Irvine', zhName: '加州大学欧文分校' },
+                  // 10: { rank: '57', enName: 'Pepperdine University', zhName: '佩珀代因大学' },
+                  // 11: { rank: '86', enName: 'University of California - Santa Cruz', zhName: '加州大学圣克鲁兹分校' },
+                  // 12: { rank: '91', enName: 'University of San Diego', zhName: '圣地亚哥大学' }
                 },
                 "CO": {
-                  0: '3',
-                  1: { rank: '86', enName: 'University of Colorado Boulder', zhName: '科罗拉多大学波尔得分校' },
-                  2: { rank: '91', enName: 'Colorado School of Mines', zhName: '科罗拉多矿业大学' },
-                  3: { rank: '91', enName: 'University of Denver', zhName: '丹佛大学' }
+                  // 0: '3',
+                  // 1: { rank: '86', enName: 'University of Colorado Boulder', zhName: '科罗拉多大学波尔得分校' },
+                  // 2: { rank: '91', enName: 'Colorado School of Mines', zhName: '科罗拉多矿业大学' },
+                  // 3: { rank: '91', enName: 'University of Denver', zhName: '丹佛大学' }
                 },
                 "CT":{
-                  0: '2',
-                  1: { rank: '3', enName: 'Yale University', zhName: '耶鲁大学' },
-                  2: { rank: '57', enName: 'University of Connecticut', zhName: '康涅狄格大学' }
+                  // 0: '2',
+                  // 1: { rank: '3', enName: 'Yale University', zhName: '耶鲁大学' },
+                  // 2: { rank: '57', enName: 'University of Connecticut', zhName: '康涅狄格大学' }
                 },
                 "DE": {
-                  0: '1',
-                  1: { rank: '75', enName: 'University of Delaware', zhName: '特拉华大学' }
+                  // 0: '1',
+                  // 1: { rank: '75', enName: 'University of Delaware', zhName: '特拉华大学' }
                 },
                 "FL":{
-                  0: '3',
-                  1: { rank: '47', enName: 'University of Miami', zhName: '迈阿密大学' },
-                  2: { rank: '49', enName: 'University of Florida', zhName: '佛罗里达大学' },
-                  3: { rank: '91', enName: 'Florida State University', zhName: '佛罗里达州立大学' }
+                  // 0: '3',
+                  // 1: { rank: '47', enName: 'University of Miami', zhName: '迈阿密大学' },
+                  // 2: { rank: '49', enName: 'University of Florida', zhName: '佛罗里达大学' },
+                  // 3: { rank: '91', enName: 'Florida State University', zhName: '佛罗里达州立大学' }
                 },
                 "GA":{
-                  0: '3',
-                  1: { rank: '20', enName: 'Emory University', zhName: '埃默里大学' },
-                  2: { rank: '36', enName: 'Georgia Institute of Technology', zhName: '乔治亚理工学院' },
-                  3: { rank: '60', enName: 'University of Georgia', zhName: '乔治亚大学' }
+                  // 0: '3',
+                  // 1: { rank: '20', enName: 'Emory University', zhName: '埃默里大学' },
+                  // 2: { rank: '36', enName: 'Georgia Institute of Technology', zhName: '乔治亚理工学院' },
+                  // 3: { rank: '60', enName: 'University of Georgia', zhName: '乔治亚大学' }
                 },
                 "HI":{
 
@@ -907,21 +917,21 @@
 
                 },
                 "IL":{
-                  0: '3',
-                  1: { rank: '5', enName: 'The University of Chicago', zhName: '芝加哥大学' },
-                  2: { rank: '12', enName: 'Northwestern University', zhName: '西北大学' },
-                  3: { rank: '41', enName: 'University of Illinois Urbana Champaign', zhName: '伊利诺伊大学香槟分校' }
+                  // 0: '3',
+                  // 1: { rank: '5', enName: 'The University of Chicago', zhName: '芝加哥大学' },
+                  // 2: { rank: '12', enName: 'Northwestern University', zhName: '西北大学' },
+                  // 3: { rank: '41', enName: 'University of Illinois Urbana Champaign', zhName: '伊利诺伊大学香槟分校' }
                 },
                 "IN": {
-                  0: '3',
-                  1: { rank: '18', enName: 'University of Notre Dame', zhName: '圣母大学' },
-                  2: { rank: '68', enName: 'Purdue University West Lafayette', zhName: '普渡大学西拉法耶校区' },
-                  3: { rank: '75', enName: 'Indiana University - Bloomington', zhName: '印第安纳大学布卢明顿分校' }
+                  // 0: '3',
+                  // 1: { rank: '18', enName: 'University of Notre Dame', zhName: '圣母大学' },
+                  // 2: { rank: '68', enName: 'Purdue University West Lafayette', zhName: '普渡大学西拉法耶校区' },
+                  // 3: { rank: '75', enName: 'Indiana University - Bloomington', zhName: '印第安纳大学布卢明顿分校' }
                 },
                 "IA":{
-                  0: '2',
-                  1: { rank: '73', enName: 'The University of Iowa', zhName: '爱荷华大学' },
-                  2: { rank: '101', enName: 'Iowa State University', zhName: '爱荷华州立大学' }
+                  // 0: '2',
+                  // 1: { rank: '73', enName: 'The University of Iowa', zhName: '爱荷华大学' },
+                  // 2: { rank: '101', enName: 'Iowa State University', zhName: '爱荷华州立大学' }
                 },
                 "KS":{
 
@@ -930,34 +940,34 @@
 
                 },
                 "LA":{
-                  0: '1',
-                  1: { rank: '52', enName: 'Tulane University', zhName: '杜兰大学' }
+                  // 0: '1',
+                  // 1: { rank: '52', enName: 'Tulane University', zhName: '杜兰大学' }
                 },
                 "ME":{
 
                 },
                 "MD": {
-                  0: '2',
-                  1: { rank: '12', enName: 'Johns Hopkins University', zhName: '约翰霍普金斯大学' },
-                  2: { rank: '62', enName: 'University of Maryland College Park', zhName: '马里兰大学帕克分校' }
+                  // 0: '2',
+                  // 1: { rank: '12', enName: 'Johns Hopkins University', zhName: '约翰霍普金斯大学' },
+                  // 2: { rank: '62', enName: 'University of Maryland College Park', zhName: '马里兰大学帕克分校' }
                 },
                 "MA":{
-                  0: '10',
-                  1: { rank: '2', enName: 'Harvard University', zhName: '哈佛大学' },
-                  2: { rank: '7', enName: 'Massachusetts Institute of Technology', zhName: '麻省理工学院' },
-                  3: { rank: '28', enName: 'Tufts University', zhName: '塔夫斯大学' },
-                  4: { rank: '31', enName: 'Boston College', zhName: '波士顿大学' },
-                  5: { rank: '32', enName: 'Brandeis University', zhName: '布兰迪斯大学' },
-                  6: { rank: '41', enName: 'Boston University', zhName: '波士顿大学' },
-                  7: { rank: '49', enName: 'Northeastern University', zhName: '东北大学' },
-                  8: { rank: '62', enName: 'Worcester Polytechnic Institute', zhName: '伍斯特理工学院' },
-                  9: { rank: '75', enName: 'Clark University', zhName: '克拉克大学' },
-                  10: { rank: '91', enName: 'University of Massachusetts - Amherst', zhName: '马萨诸塞大学安默斯特校区' }
+                  // 0: '10',
+                  // 1: { rank: '2', enName: 'Harvard University', zhName: '哈佛大学' },
+                  // 2: { rank: '7', enName: 'Massachusetts Institute of Technology', zhName: '麻省理工学院' },
+                  // 3: { rank: '28', enName: 'Tufts University', zhName: '塔夫斯大学' },
+                  // 4: { rank: '31', enName: 'Boston College', zhName: '波士顿大学' },
+                  // 5: { rank: '32', enName: 'Brandeis University', zhName: '布兰迪斯大学' },
+                  // 6: { rank: '41', enName: 'Boston University', zhName: '波士顿大学' },
+                  // 7: { rank: '49', enName: 'Northeastern University', zhName: '东北大学' },
+                  // 8: { rank: '62', enName: 'Worcester Polytechnic Institute', zhName: '伍斯特理工学院' },
+                  // 9: { rank: '75', enName: 'Clark University', zhName: '克拉克大学' },
+                  // 10: { rank: '91', enName: 'University of Massachusetts - Amherst', zhName: '马萨诸塞大学安默斯特校区' }
                 },
                 "MI":{
-                  0: '2',
-                  1: { rank: '28', enName: 'University of Michigan Ann Arbor', zhName: '密歇根大学-安娜堡分校' },
-                  2: { rank: '73', enName: 'Michigan State University', zhName: '密歇根州立大学' }
+                  // 0: '2',
+                  // 1: { rank: '28', enName: 'University of Michigan Ann Arbor', zhName: '密歇根大学-安娜堡分校' },
+                  // 2: { rank: '73', enName: 'Michigan State University', zhName: '密歇根州立大学' }
                 },
                 "MN":{
 
