@@ -845,8 +845,9 @@
               };
               let stateUniversities = {
                 "AL":{
-                  "0": { rank : '86',enName : 'University of Alabama',zhName : '阿拉巴马大学'},
-                  "1": { rank: '91', enName: 'Auburn University', zhName: '奥本大学'}
+                  0 : '2',
+                  1 : { rank : '86',enName : 'University of Alabama',zhName : '阿拉巴马大学'},
+                  2 : { rank: '91', enName: 'Auburn University', zhName: '奥本大学'}
                 },
                 "AK":{
                    
@@ -999,19 +1000,19 @@
               function showDialog(stateID) {
                 $('#state-dialog-title').html(states[stateID]);
                 let uBuffer = stateUniversities[stateID];
-                let temp = '+++';
-                console.log(uBuffer);
-                if (uBuffer['0']) { 
+                let temp = '';
+                // console.log(uBuffer);
+                if (uBuffer[0]) { 
                   // console.log("有进入前百的大学");
-                  for (let i=0;i<uBuffer.length;i++) {
-                    console.log(uBuffer[i]);
-                    temp = temp + "<div class='row'><div class='col-2'>"+ uBuffer[i][rank] +"</div><div class='col-5'>" + uBuffer[i][enName] +"</div><div class='col-5'>"+ uBuffer[i][zhName] +"</div></div>";
+                  for (let i=1;i<=uBuffer[0];i++) {
+                    // console.log(uBuffer[i]);
+                    temp = temp + "<div class='row'><div class='col-2'>"+ uBuffer[i].rank +"</div><div class='col-5'>" + uBuffer[i].enName +"</div><div class='col-5'>"+ uBuffer[i].zhName +"</div></div>";
                   }
                 } else {
-                  // temp = "未有进入前百的大学";
+                  temp = "未有进入前百的大学";
                   // console.log("未有进入前百的大学");
                 }
-                // $('#state-dialog-body').html(temp);
+                $('#state-dialog-body').html(temp);
                 $('#state-dialog').modal('show');
                 // console.log(stateID);
                 // console.log(states[stateID]);
