@@ -1076,7 +1076,7 @@
                   // console.log("有进入前百的大学");
                   for (let i=1;i<=uBuffer[0];i++) {
                     // console.log(uBuffer[i]);
-                    temp = temp + "<div class='row'><div class='col-2'>"+ uBuffer[i].rank +"</div><div class='col-7'>" + uBuffer[i].enName +"</div><div class='col-3'>"+ uBuffer[i].location +"</div></div>";
+                    temp = temp + "<div class='row'><div class='col-2'>"+ uBuffer[i].rank +"</div><div class='col-7'><a class='text-dark' href='https://www.google.com/search?q="+ uBuffer[i].enName+"'>" + uBuffer[i].enName +"</a></div><div class='col-3'>"+ uBuffer[i].location +"</div></div>";
                   }
                 } else {
                   temp = "未有进入前百的大学";
