@@ -792,6 +792,7 @@
         <div class="row">
           <div class="col-12">
             <script>
+              //state ID and state name
               let states = {
                 "AL":"ALABAMA",
                 "AK":"ALASKA",
@@ -844,6 +845,7 @@
                 "WI":"WISCONSIN",
                 "WY":"WYOMING"
               };
+              //empty stateUniversities object, contains states ID as key
               let stateUniversities = {
                 "AL":{
                   // 0 : '2',
@@ -1046,15 +1048,16 @@
                 }
               };
               function showDialog(stateID) {
+                processData(JSONdata,stateID);
                 $('#state-dialog-title').html(states[stateID]);
                 let uBuffer = stateUniversities[stateID];
-                let temp = '';
+                let temp = "<div class='row'><div class='col-2'>排名</div><div class='col-8'>学校</div><div class='col-2'>所在地区</div></div>";
                 // console.log(uBuffer);
                 if (uBuffer[0]) { 
                   // console.log("有进入前百的大学");
                   for (let i=1;i<=uBuffer[0];i++) {
                     // console.log(uBuffer[i]);
-                    temp = temp + "<div class='row'><div class='col-2'>"+ uBuffer[i].rank +"</div><div class='col-5'>" + uBuffer[i].enName +"</div><div class='col-5'>"+ uBuffer[i].zhName +"</div></div>";
+                    temp = temp + "<div class='row'><div class='col-2'>"+ uBuffer[i].rank +"</div><div class='col-8'>" + uBuffer[i].enName +"</div><div class='col-2'>"+ uBuffer[i].location +"</div></div>";
                   }
                 } else {
                   temp = "未有进入前百的大学";
@@ -1065,6 +1068,48 @@
                 // console.log(stateID);
                 // console.log(states[stateID]);
               } 
+              /**
+               * accept json data, and stateID, 
+               *  prepare data into stateUniversities[stateID]
+               * return stateUniversities[stateID]
+               * stateUniversities structure
+               *     "MI":{
+               *        0: '2',
+               *        1: { rank: '28', enName: 'University of Michigan Ann Arbor', zhName: '密歇根大学-安娜堡分校' },
+               *        2: { rank: '73', enName: 'Michigan State University', zhName: '密歇根州立大学' }
+               *      },
+              */
+              function processData(JSONData,stateID) {
+                // let temp = $.parseJSON(JSONData);
+                let temp = JSONData;
+                /**
+                 * temp structure
+                 * Name
+                 * Location (town)
+                 * State
+                 * Rank
+                 * Description
+                 * Tuition
+                 * In-state
+                 * Undergrad Enrollment
+                */
+                let universitiesCount = 0;
+                for (let item in temp) {
+                  // console.log(temp[item]);
+                  if (temp[item].State === stateID) {
+                    // console.log(temp[item].State+' vs '+stateID);
+                    // if university in JSONdata is in state, then add it to stateUniversities[stateID]
+                    universitiesCount++;
+                    stateUniversities[stateID][0] = universitiesCount;
+                    //stateUniversities[stateID][universitiesCount] init
+                    stateUniversities[stateID][universitiesCount] = stateUniversities[stateID][universitiesCount] || {};
+                    stateUniversities[stateID][universitiesCount].rank = temp[item].Rank;
+                    stateUniversities[stateID][universitiesCount].enName = temp[item].Name;
+                    stateUniversities[stateID][universitiesCount].zhName = '';
+                    stateUniversities[stateID][universitiesCount].location = temp[item].Location; //town name
+                  }
+                }
+              }
             </script>
               <!-- Modal -->
               <div class="modal fade" id="state-dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

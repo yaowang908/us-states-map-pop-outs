@@ -1,4 +1,4 @@
-let data = [
+let JSONdata = [
     {
         "Name": "Princeton University",
         "Location": "Princeton",
@@ -2309,4 +2309,4 @@ let data = [
         "In-state": "$6,866",
         "Undergrad Enrollment": "25,259"
     }
-]
+];
