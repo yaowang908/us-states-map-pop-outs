@@ -8,7 +8,63 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script src="data.js"></script>
+	<!-- <script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script> -->
+	<script src="data.js"></script>
+	<script>
+		//state ID and state name
+		let states = {
+				"AL": "ALABAMA",
+				"AK": "ALASKA",
+				"AZ": "ARIZONA",
+				"AR": "ARKANSAS",
+				"CA": "CALIFORNIA",
+				"CO": "COLORADO",
+				"CT": "CONNECTICUT",
+				"DE": "DELAWARE",
+				"FL": "FLORIDA",
+				"GA": "GEORGIA",
+				"HI": "HAWAII",
+				"ID": "IDAHO",
+				"IL": "ILLINOIS",
+				"IN": "INDIANA",
+				"IA": "IOWA",
+				"KS": "KANSAS",
+				"KY": "KENTUCKY",
+				"LA": "LOUISIANA",
+				"ME": "MAINE",
+				"MD": "MARYLAND",
+				"MA": "MASSACHUSETTS",
+				"MI": "MICHIGAN",
+				"MN": "MINNESOTA",
+				"MS": "MISSISSIPPI",
+				"MO": "MISSOURI",
+				"MT": "MONTANA",
+				"NE": "NEBRASKA",
+				"NV": "NEVADA",
+				"NH": "NEWHAMPSHIRE",
+				"NJ": "NEWJERSEY",
+				"NM": "NEWMEXICO",
+				"NY": "NEWYORK",
+				"NC": "NORTHCAROLINA",
+				"ND": "NORTHDAKOTA",
+				"OH": "OHIO",
+				"OK": "OKLAHOMA",
+				"OR": "OREGON",
+				"PA": "PENNSYLVANIA",
+				"RI": "RHODEISLAND",
+				"SC": "SOUTHCAROLINA",
+				"SD": "SOUTHDAKOTA",
+				"TN": "TENNESSEE",
+				"TX": "TEXAS",
+				"UT": "UTAH",
+				"VT": "VERMONT",
+				"VA": "VIRGINIA",
+				"WA": "WASHINGTON",
+				"WV": "WESTVIRGINIA",
+				"WI": "WISCONSIN",
+				"WY": "WYOMING"
+			};
+	</script>
     <title>US Map Click Pop-outs</title>
 </head>
 <body>
@@ -750,7 +806,21 @@
                   </g>
                     <script>
                         (function() {
-                            let paths = document.getElementById('outlines');
+							let paths = document.getElementById('outlines');
+							
+							// $(paths).find("path").attr('data-toggle', 'tooltip');
+							// $(paths).find("path").attr('data-placement', 'top');
+							// $(paths).find("path").attr('data-html', 'true');
+							// $(paths).find("path").attr('data-original-title', '&lt;h4&gt;&lt;/h4&gt;&lt;p&gt;Click for more info.&lt;/p&gt;');
+							$(paths).find("path").each(function(index) {
+								$(this).attr('data-toggle', 'tooltip');
+								$(this).attr('data-placement', 'top');
+								// $(this).attr('data-html', 'true');
+								$(this).attr('data-original-title', '&lt;h4&gt;'+ states[$(this).attr('id')] +'&lt;/h4&gt;&lt;p&gt;Click for more info.&lt;/p&gt;');
+								$(this).tooltip({html:true});
+							});
+							// $(paths).find("path").tooltip({ html: true });
+
                             paths.addEventListener('mouseover',function(event){onMouseOver(event);});
                             paths.addEventListener('mouseout',function(event){onMouseOut(event);});
                             paths.addEventListener('click',function(event){onMouseClick(event);});
@@ -763,7 +833,9 @@
 
                         //mouse over call back
                         function onMouseOver(evt) {
-                            // console.log(evt.target.id);
+							// console.log(evt.target.id);
+							showToolTip(evt);
+							// $(evt.target).tooltip();
                         }
 
                         //mouse out call back
@@ -774,7 +846,7 @@
                         //mouse click call back
                         function onMouseClick(evt) {
                           // console.log('clicked '+ evt.target.id);
-                          showDialog(evt.target.id);
+						  showDialog(evt.target.id);
                         }
                         
                         //dialog
@@ -792,59 +864,6 @@
         <div class="row">
           <div class="col-12">
             <script>
-              //state ID and state name
-              let states = {
-                "AL":"ALABAMA",
-                "AK":"ALASKA",
-                "AZ":"ARIZONA",
-                "AR":"ARKANSAS",
-                "CA":"CALIFORNIA",
-                "CO":"COLORADO",
-                "CT":"CONNECTICUT",
-                "DE":"DELAWARE",
-                "FL":"FLORIDA",
-                "GA":"GEORGIA",
-                "HI":"HAWAII",
-                "ID":"IDAHO",
-                "IL":"ILLINOIS",
-                "IN":"INDIANA",
-                "IA":"IOWA",
-                "KS":"KANSAS",
-                "KY":"KENTUCKY",
-                "LA":"LOUISIANA",
-                "ME":"MAINE",
-                "MD":"MARYLAND",
-                "MA":"MASSACHUSETTS",
-                "MI":"MICHIGAN",
-                "MN":"MINNESOTA",
-                "MS":"MISSISSIPPI",
-                "MO":"MISSOURI",
-                "MT":"MONTANA",
-                "NE":"NEBRASKA",
-                "NV":"NEVADA",
-                "NH":"NEWHAMPSHIRE",
-                "NJ":"NEWJERSEY",
-                "NM":"NEWMEXICO",
-                "NY":"NEWYORK",
-                "NC":"NORTHCAROLINA",
-                "ND":"NORTHDAKOTA",
-                "OH":"OHIO",
-                "OK":"OKLAHOMA",
-                "OR":"OREGON",
-                "PA":"PENNSYLVANIA",
-                "RI":"RHODEISLAND",
-                "SC":"SOUTHCAROLINA",
-                "SD":"SOUTHDAKOTA",
-                "TN":"TENNESSEE",
-                "TX":"TEXAS",
-                "UT":"UTAH",
-                "VT":"VERMONT",
-                "VA":"VIRGINIA",
-                "WA":"WASHINGTON",
-                "WV":"WESTVIRGINIA",
-                "WI":"WISCONSIN",
-                "WY":"WYOMING"
-              };
               //empty stateUniversities object, contains states ID as key
               let stateUniversities = {
                 "AL":{
@@ -1051,13 +1070,13 @@
                 processData(JSONdata,stateID);
                 $('#state-dialog-title').html(states[stateID]);
                 let uBuffer = stateUniversities[stateID];
-                let temp = "<div class='row'><div class='col-2'>排名</div><div class='col-8'>学校</div><div class='col-2'>所在地区</div></div>";
+                let temp = "<div class='row'><div class='col-2'>排名</div><div class='col-7'>学校</div><div class='col-3'>所在地区</div></div>";
                 // console.log(uBuffer);
                 if (uBuffer[0]) { 
                   // console.log("有进入前百的大学");
                   for (let i=1;i<=uBuffer[0];i++) {
                     // console.log(uBuffer[i]);
-                    temp = temp + "<div class='row'><div class='col-2'>"+ uBuffer[i].rank +"</div><div class='col-8'>" + uBuffer[i].enName +"</div><div class='col-2'>"+ uBuffer[i].location +"</div></div>";
+                    temp = temp + "<div class='row'><div class='col-2'>"+ uBuffer[i].rank +"</div><div class='col-7'>" + uBuffer[i].enName +"</div><div class='col-3'>"+ uBuffer[i].location +"</div></div>";
                   }
                 } else {
                   temp = "未有进入前百的大学";
@@ -1109,6 +1128,17 @@
                     stateUniversities[stateID][universitiesCount].location = temp[item].Location; //town name
                   }
                 }
+              }
+              /**
+               * show tooltip when mouse hover an element
+               * accept element argument
+               *        
+              */
+              function showToolTip(evt) {
+				// console.log($(evt));
+				// $(evt.target).attr("data-original-title","&lt;h4&gt;"+states[evt.target.id]+"&lt;/h4&gt;&lt;p&gt;Click for more info.&lt;/p&gt;");
+				// $('[data-toggle="tooltip"]').tooltip();
+				
               }
             </script>
               <!-- Modal -->
