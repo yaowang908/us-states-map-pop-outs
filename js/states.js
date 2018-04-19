@@ -1,3 +1,4 @@
+//states object { abbteviation : full name }
 let states = {
     "AL": "ALABAMA",
     "AK": "ALASKA",
